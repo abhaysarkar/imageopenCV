@@ -154,7 +154,7 @@ public class OCRController {
 
     public OCRController() {
         tesseract = new Tesseract();
-        tesseract.setDatapath("/resources/tessdata"); // Path for Heroku
+        tesseract.setDatapath("/app/vendor/tesseract-ocr/share/tessdata"); // Path for Heroku
         tesseract.setLanguage("eng"); // Set the language here
     }
 
