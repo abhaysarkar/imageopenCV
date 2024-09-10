@@ -494,10 +494,6 @@
 //     }
 // }
 
-
->>>>>>> b70a6187136ed3aa71dfa90b2f1d525ea59eb98a
-
-
 package in.dataman.controller;
 
 import net.sourceforge.tess4j.Tesseract;
