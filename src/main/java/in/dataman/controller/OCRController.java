@@ -127,6 +127,7 @@
 //}
 
 
+<<<<<<< HEAD
 //package in.dataman.controller;
 //
 //import net.sourceforge.tess4j.Tesseract;
@@ -376,6 +377,125 @@
 //        return "Gender not found";
 //    }
 //}
+=======
+// package in.dataman.controller;
+
+// import net.sourceforge.tess4j.Tesseract;
+// import net.sourceforge.tess4j.TesseractException;
+// import org.springframework.http.HttpStatus;
+// import org.springframework.http.ResponseEntity;
+// import org.springframework.web.bind.annotation.*;
+// import org.springframework.web.multipart.MultipartFile;
+
+// import javax.imageio.ImageIO;
+// import java.awt.image.BufferedImage;
+// import java.io.ByteArrayInputStream;
+// import java.io.IOException;
+// import java.io.InputStream;
+// import java.util.HashMap;
+// import java.util.Map;
+// import java.util.regex.Matcher;
+// import java.util.regex.Pattern;
+
+// @RestController
+// @RequestMapping("/api/ocr")
+// public class OCRController {
+
+//     private Tesseract tesseract;
+
+//     public OCRController() {
+//         tesseract = new Tesseract();
+//         tesseract.setDatapath("/app/vendor/tesseract-ocr/share/tessdata"); // Path for Heroku
+//         tesseract.setLanguage("eng"); // Set the language here
+//     }
+
+//     @PostMapping("/upload")
+//     public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file) {
+//         if (file.isEmpty()) {
+//             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No file uploaded");
+//         }
+
+//         try {
+//             byte[] imageBytes = file.getBytes();
+//             String extractedText = extractTextFromImage(imageBytes);
+
+//             Map<String, String> parsedInfo = new HashMap<>();
+//             parsedInfo.put("aadhar_number", parseAadharNumber(extractedText));
+//             parsedInfo.put("name", parseName(extractedText));
+//             parsedInfo.put("dob", parseDOB(extractedText));
+//             parsedInfo.put("gender", parseGender(extractedText));
+
+//             return ResponseEntity.ok(parsedInfo);
+
+//         } catch (IOException | TesseractException e) {
+//             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+//                     .body("Error processing the image: " + e.getMessage());
+//         }
+//     }
+
+//     private String extractTextFromImage(byte[] imageBytes) throws TesseractException, IOException {
+//         InputStream bis = new ByteArrayInputStream(imageBytes);
+//         BufferedImage bufferedImage = ImageIO.read(bis);
+
+//         if (bufferedImage == null) {
+//             throw new IOException("Unsupported image format");
+//         }
+
+//         return tesseract.doOCR(bufferedImage);
+//     }
+
+//     private String parseAadharNumber(String text) {
+//         String aadharPattern = "\\d{4}\\s*\\d{4}\\s*\\d{4}";
+//         Pattern pattern = Pattern.compile(aadharPattern);
+//         Matcher matcher = pattern.matcher(text);
+
+//         if (matcher.find()) {
+//             return matcher.group().replaceAll("\\s+", "");
+//         }
+//         return "Aadhar number not found";
+//     }
+
+//     private String parseName(String text) {
+//         String[] namePatterns = { "Name[:\\s]*([A-Za-z\\s]+)", "Name\\s*[:\\s]*([A-Za-z\\s]+)",
+//                 "Name:\\s*([A-Za-z\\s]+)", "Name\\s*([A-Za-z\\s]+)", "([A-Z][a-z]+(?:\\s[A-Z][a-z]+)*)" };
+
+//         for (String namePattern : namePatterns) {
+//             Pattern pattern = Pattern.compile(namePattern, Pattern.CASE_INSENSITIVE);
+//             Matcher matcher = pattern.matcher(text);
+
+//             if (matcher.find()) {
+//                 return matcher.group(1).trim();
+//             }
+//         }
+
+//         return "Name not found";
+//     }
+
+//     private String parseDOB(String text) {
+//         String dobPattern = "DOB[:\\s]*(\\d{2}/\\d{2}/\\d{4})";
+//         Pattern pattern = Pattern.compile(dobPattern);
+//         Matcher matcher = pattern.matcher(text);
+
+//         if (matcher.find()) {
+//             return matcher.group(1).trim();
+//         }
+//         return "Date of Birth not found";
+//     }
+
+//     private String parseGender(String text) {
+//         String genderPattern = "(Male|Female|MALE|FEMALE)";
+//         Pattern pattern = Pattern.compile(genderPattern, Pattern.CASE_INSENSITIVE);
+//         Matcher matcher = pattern.matcher(text);
+
+//         if (matcher.find()) {
+//             return matcher.group(1).toUpperCase();
+//         }
+//         return "Gender not found";
+//     }
+// }
+
+
+>>>>>>> b70a6187136ed3aa71dfa90b2f1d525ea59eb98a
 
 
 package in.dataman.controller;
