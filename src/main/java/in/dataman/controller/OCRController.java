@@ -37,6 +37,13 @@ public class OCRController {
         tesseract.setLanguage("eng"); // Set the language
     }
 
+
+    @GetMapping("/")
+    public String check(){
+
+        return "jai shree krishna";
+    }
+    
     @PostConstruct
     public void init() throws IOException {
         String herokuTessdataPath = "/app/vendor/tesseract-ocr/share/tessdata";  // Path for Heroku
