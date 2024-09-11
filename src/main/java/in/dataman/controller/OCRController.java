@@ -193,7 +193,7 @@ public class OCRController {
 
     @PostConstruct
     public void init() throws IOException {
-        String herokuTessdataPath = "/app/vendor/tesseract-ocr/share/tessdata";  // Path for Heroku
+        String herokuTessdataPath = "/app/src/main/resources/tessdata";  // Path for Heroku
 
         // Check if the app is running on Heroku by checking for a specific environment variable
         String dyno = System.getenv("DYNO");
