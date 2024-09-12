@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 // package in.dataman.controller;
 
 // import net.sourceforge.tess4j.Tesseract;
@@ -154,7 +153,7 @@
 
 
 
->>>>>>> cba1b595e4a161c9a40730e7d0cd8507d1785697
+
 package in.dataman.controller;
 
 import net.sourceforge.tess4j.Tesseract;
@@ -181,7 +180,6 @@ public class OCRController {
         // Optional: set the language you want to recognize, e.g., "eng" for English
         tesseract.setLanguage("eng");
 
-<<<<<<< HEAD
         // Convert MultipartFile to File for processing
         File convFile = new File(System.getProperty("java.io.tmpdir") + "/" + file.getOriginalFilename());
         file.transferTo(convFile);
@@ -192,7 +190,7 @@ public class OCRController {
         } catch (TesseractException e) {
             e.printStackTrace();
             return "Error reading image";
-=======
+
     @PostConstruct
     public void init() throws IOException {
         String herokuTessdataPath = "/src/main/resources/tessdata";  // Path for Heroku
@@ -235,12 +233,12 @@ public class OCRController {
         } catch (IOException | TesseractException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Error processing the image: " + e.getMessage());
->>>>>>> cba1b595e4a161c9a40730e7d0cd8507d1785697
+
         }
     }
 }
 
-<<<<<<< HEAD
+
 
 
 
