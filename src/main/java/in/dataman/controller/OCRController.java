@@ -190,6 +190,8 @@ public class OCRController {
         } catch (TesseractException e) {
             e.printStackTrace();
             return "Error reading image";
+        }
+    }    
 
     @PostConstruct
     public void init() throws IOException {
