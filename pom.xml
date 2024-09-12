@@ -61,7 +61,7 @@
 			<version>4.5.4</version>
 		</dependency>
 
-<<<<<<< HEAD
+
 
 		<dependency>
 			<groupId>net.java.dev.jna</groupId>
@@ -76,7 +76,7 @@
             <artifactId>tesseract</artifactId>
             <version>3.03-rc1-0.11</version>
         </dependency>
-=======
+
 		<dependency>
     			<groupId>net.java.dev.jna</groupId>
     			<artifactId>jna</artifactId>
@@ -88,7 +88,7 @@
             		<artifactId>tesseract</artifactId>
             		<version>3.03-rc1-0.11</version>
         	</dependency>
->>>>>>> cba1b595e4a161c9a40730e7d0cd8507d1785697
+
 
 	</dependencies>
 
