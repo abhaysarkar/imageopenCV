@@ -245,5 +245,4 @@ public class OCRController {
 
 
 
-=======
->>>>>>> cba1b595e4a161c9a40730e7d0cd8507d1785697
+
