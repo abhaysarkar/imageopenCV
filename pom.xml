@@ -13,7 +13,6 @@
 	<artifactId>IMG-RecognitionAPP</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>IMG-RecognitionAPP</name>
-	<packaging>jar</packaging>
 	<description>Demo project for Spring Boot</description>
 	<url />
 	<licenses>
@@ -62,6 +61,7 @@
 			<version>4.5.4</version>
 		</dependency>
 
+<<<<<<< HEAD
 
 		<dependency>
 			<groupId>net.java.dev.jna</groupId>
@@ -76,6 +76,19 @@
             <artifactId>tesseract</artifactId>
             <version>3.03-rc1-0.11</version>
         </dependency>
+=======
+		<dependency>
+    			<groupId>net.java.dev.jna</groupId>
+    			<artifactId>jna</artifactId>
+    			<version>5.6.0</version>
+		</dependency>
+
+		<dependency>
+            		<groupId>org.bytedeco.javacpp-presets</groupId>
+            		<artifactId>tesseract</artifactId>
+            		<version>3.03-rc1-0.11</version>
+        	</dependency>
+>>>>>>> cba1b595e4a161c9a40730e7d0cd8507d1785697
 
 	</dependencies>
 
